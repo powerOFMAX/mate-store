@@ -23,7 +23,7 @@ const AnimatedHeader = ({
     >
       <Mate size="58px" />
     </Transition>
-    Mate
+    Store
   </Header>
 )
 

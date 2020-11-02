@@ -7,7 +7,7 @@ const RottenHeader = () => (
   <Header size="huge" as="h1">
     Maxi
     <Mate size="58px" />
-    Mate
+    Store
   </Header>
 )
 

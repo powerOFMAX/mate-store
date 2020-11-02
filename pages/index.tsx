@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import fetch from 'isomorphic-unfetch'
+import ProductList from '@components/ProductList/ProductList'
+import IconHeader from '@components/IconHeader/IconHeader'
+import Layout from '@components/Layout/Layout'
 
 const HomePage = () => {
   const [productList, setProductList] = useState<TProduct[]>([])
@@ -13,12 +16,10 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div>
-      <div>Mate list!</div>
-      {productList.map((item) => {
-        return <div>{item.image}</div>
-      })}
-    </div>
+    <Layout>
+      <IconHeader />
+      <ProductList products={productList} />
+    </Layout>
   )
 }
 

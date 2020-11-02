@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "name": "platzi-next",
+  "name": "maxi-next",
   "author": "powerOFMAX",
   "private": true,
   "description": "",
@@ -17,7 +17,9 @@
     "isomorphic-unfetch": "^3.1.0",
     "next": "^9.4.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.0.5",
@@ -35,7 +37,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && yarn type-check"
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "yarn type-check"
     }
   }
 }

@@ -13,7 +13,7 @@ type TProductAttributes = {
   description: string
   size: string
   weight: string
-  taste: string
+  observations: string
 }
 
 type TProduct = {

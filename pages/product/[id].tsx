@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import fetch from 'isomorphic-unfetch'
+import Layout from '@components/Layout/Layout'
+import ProductSummary from '@components/ProductSummary/ProductSummary'
 
 const ProductPage = () => {
   const {
     query: { id },
   } = useRouter()
-  const [product, setProduct] = useState<TProduct>()
+  const [product, setProduct] = useState<TProduct | null>(null)
 
   useEffect(() => {
     if (id) {
       fetch(`/api/mate/${id}`)
         .then((response) => response.json())
         .then((product) => {
-          console.log(product)
           setProduct(product)
         })
     }
   }, [id])
 
   return (
-    <section>
-      <h1>Página producto: {product?.name}</h1>
-    </section>
+    <Layout>
+      {product == null ? null : <ProductSummary product={product} />}
+    </Layout>
   )
 }
 
